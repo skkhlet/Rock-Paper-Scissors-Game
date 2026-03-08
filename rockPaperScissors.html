@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>    
+  <head>
+    <title>RockPaperSci</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #75ac22;
+        color: rgb(173, 197, 204);
+      }
+
+      button {
+        color: pink;
+        background-color: black;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+        border-radios:10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <button onclick="
+    playGame('rock');
+    ">
+    Rock
+    </button>
+
+    <button onclick="
+    playGame('paper');
+    ">
+    Paper
+    </button>
+
+    <button onclick="
+    playGame('scissors');
+    ">
+    Scissors
+    </button>
+
+
+  <script>
+    function playGame(playerMove){
+      
+      const computerMove = pickCompMove();
+      
+      let result='';
+      
+      if (playerMove ==='sicssors'){
+      if (computerMove === 'rock'){
+        result = 'You lose';
+      } else if (computerMove === 'paper'){
+        result = 'You win';
+      } else if (computerMove === 'scissors'){
+        result = 'Tie';
+      } 
+      
+    } else if (playerMove ==='paper') {
+        if (computerMove === 'rock'){
+        result = 'You win';
+      } else if (computerMove === 'paper'){
+        result = 'Tie';
+      } else if (computerMove === 'scissors'){
+        result = 'You lose';
+      }
+
+    } else if (playerMove === 'rock'){
+        if (computerMove === 'rock'){
+        result = 'Tie';
+      } else if (computerMove === 'paper'){
+        result = 'You lose';
+      } else if (computerMove === 'scissors'){
+        result = 'You win';
+      }
+    }
+
+    alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}.`);
+
+    }
+
+
+    function pickCompMove(){
+        const randomNumber = Math.random();
+        
+
+      if (randomNumber >= 0 && randomNumber < 0.34) {
+        computerMove = 'rock';
+      } else if (randomNumber >=0.34 && randomNumber <0.67){
+        computerMove ='paper';
+      } else if (randomNumber >= 0.67 && randomNumber < 1){
+        computerMove = 'scissors';
+      }
+      return computerMove;
+    }
+
+    
+
+    
+  </script> 
+  </body>
+</html>
